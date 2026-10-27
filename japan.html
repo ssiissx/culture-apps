@@ -7,6 +7,13 @@
 <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141519" media="(prefers-color-scheme: dark)">
 <title>알고 가면 보이는 일본</title>
+<link rel="manifest" href="japan.webmanifest">
+<link rel="icon" type="image/png" href="icons/japan-favicon.png">
+<link rel="apple-touch-icon" href="icons/japan-apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="보이는 일본">
+<style>.hublink{display:inline-block;margin:16px 0 -18px;padding:4px 0;font-size:14px;font-weight:600;color:var(--mute);text-decoration:none}</style>
 <!--
   ✏️ 내용 고치는 법 (Claude 없이)
   메모장 같은 편집기로 이 파일을 열고 '카드 데이터 시작'을 검색하세요.
@@ -171,6 +178,7 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
 <body>
 <div class="wrap">
 <div class="home" id="list">
+<a class="hublink" href="./">‹ 교양 앱</a>
 <header class="top"><div class="brand"><span class="mark">日</span><div><h1>알고 가면 보이는 일본</h1><p class="sub">역사와 사건, IP, 요즘 문화, 그리고 그늘까지 · <span class="ntotal">53</span>장</p></div></div>
 <button class="ib aa js-only" type="button" aria-label="읽기 설정">가</button></header>
 <div class="stats js-only"><div class="sline"><span><b class="nread">0</b> / <span class="ntotal">53</span>장 읽음</span><span class="nfav"></span></div><div class="meter"><i></i></div>
@@ -2340,5 +2348,6 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
   route();
 })();
 </script>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})</script>
 </body>
 </html>

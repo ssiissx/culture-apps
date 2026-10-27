@@ -1,0 +1,36 @@
+{
+  "name": "10분 상식",
+  "short_name": "10분 상식",
+  "description": "궁금한 질문 하나, 이야기 한 편 · 53장",
+  "lang": "ko",
+  "id": "sangsik.html",
+  "start_url": "sangsik.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f2ea",
+  "theme_color": "#f6f2ea",
+  "categories": [
+    "education",
+    "books"
+  ],
+  "icons": [
+    {
+      "src": "icons/sangsik-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/sangsik-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/sangsik-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "알고 보면 새로운 한국",
+  "short_name": "새로운 한국",
+  "description": "한국인도 몰랐던 역사와 사건, K-콘텐츠, 요즘 문화, 그리고 그늘까지 · 53장",
+  "lang": "ko",
+  "id": "korea.html",
+  "start_url": "korea.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f2e9",
+  "theme_color": "#f5f2e9",
+  "categories": [
+    "education",
+    "books"
+  ],
+  "icons": [
+    {
+      "src": "icons/korea-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/korea-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/korea-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

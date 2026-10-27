@@ -1,0 +1,36 @@
+{
+  "name": "교양 앱",
+  "short_name": "교양 앱",
+  "description": "10분이면 한 장씩 읽는 교양 앱 세 개 (상식·일본·한국)",
+  "lang": "ko",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#f6f3ec",
+  "categories": [
+    "education",
+    "books"
+  ],
+  "icons": [
+    {
+      "src": "icons/hub-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/hub-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/hub-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
