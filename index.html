@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>교양 앱</title>
+<style>
+/* 세 앱으로 가는 첫 화면: 앱마다 자기 색의 표식을 단 세로 목록 */
+:root{--bg:#f6f3ec;--surface:#fffdf8;--ink:#28262a;--mute:#67636a;--line:#e5e0d6;--a0:#ad4824;--a1:#b23a26;--a2:#16705f;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161517;--surface:#201f22;--ink:#ebe8ee;--mute:#a29ea6;--line:#343238;--a0:#f28d63;--a1:#f27c60;--a2:#5cc4ad;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161517;--surface:#201f22;--ink:#ebe8ee;--mute:#a29ea6;--line:#343238;--a0:#f28d63;--a1:#f27c60;--a2:#5cc4ad;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+main{max-width:620px;margin:0 auto;padding-block:calc(40px + env(safe-area-inset-top,0px)) calc(48px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{margin:0;font-size:28px;letter-spacing:-.6px;text-wrap:balance}
+.lead{margin:6px 0 26px;color:var(--mute);font-size:15px;line-height:1.6}
+.apps{display:grid;gap:12px}
+.app{display:flex;align-items:center;gap:16px;padding:18px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);color:inherit;text-decoration:none}
+.app:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.app:active{transform:scale(.99)}
+.mark{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--a);color:var(--surface);font-size:21px;font-weight:800}
+.m-waves{border-radius:9px;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-size:25px}
+.m-obang{border-radius:50%}
+.txt{flex:1;min-width:0;display:grid;gap:3px}
+.txt b{font-size:18px;letter-spacing:-.3px}
+.txt span{font-size:14px;line-height:1.5;color:var(--mute)}
+.txt i{font-style:normal;font-size:13px;font-weight:700;color:var(--a)}
+.go{flex:none;font-size:26px;color:var(--mute)}
+.foot{margin:28px 0 0;font-size:13px;line-height:1.7;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<h1>교양 앱</h1>
+<p class="lead">10분이면 한 장, 알고 나면 달리 보이는 이야기들.</p>
+<nav class="apps">
+<a class="app" href="sangsik.html" style="--a:var(--a0)"><span class="mark m-dots">10</span><span class="txt"><b>10분 상식</b><span>궁금한 질문 하나, 이야기 한 편</span><i>53장</i></span><span class="go">›</span></a>
+<a class="app" href="japan.html" style="--a:var(--a1)"><span class="mark m-waves">日</span><span class="txt"><b>알고 가면 보이는 일본</b><span>역사와 사건, IP, 요즘 문화, 그리고 그늘까지</span><i>53장</i></span><span class="go">›</span></a>
+<a class="app" href="korea.html" style="--a:var(--a2)"><span class="mark m-obang">한</span><span class="txt"><b>알고 보면 새로운 한국</b><span>한국인도 몰랐던 역사와 사건, K-콘텐츠, 요즘 문화, 그리고 그늘까지</span><i>53장</i></span><span class="go">›</span></a>
+</nav>
+<p class="foot">앱마다 HTML 파일 하나로 되어 있어서 내려받아 두면 인터넷 없이도 열려요. 읽은 기록과 즐겨찾기는 이 기기의 브라우저에만 저장돼요.</p>
+</main>
+</body>
+</html>

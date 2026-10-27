@@ -1,0 +1,18 @@
+# 교양 앱
+
+10분이면 한 장씩 읽는 교양 앱 세 개예요. 앱마다 HTML 파일 하나에 디자인·기능·내용이 모두 들어 있어서, 인터넷 없이 열어도 동작해요.
+
+- [10분 상식](https://ssiissx.github.io/culture-apps/sangsik.html) — 역사·미술·철학심리·과학·음악
+- [알고 가면 보이는 일본](https://ssiissx.github.io/culture-apps/japan.html) — 역사와 사건, IP, 요즘 문화, 그늘
+- [알고 보면 새로운 한국](https://ssiissx.github.io/culture-apps/korea.html) — 역사와 사건, K-콘텐츠, 요즘 문화, 그늘
+
+읽음 표시·즐겨찾기·글자 크기·밝게/어둡게 설정은 각 기기의 브라우저(localStorage)에만 저장돼요.
+
+## 내용 고치는 법
+
+1. 앱 파일(`sangsik.html` 등)을 열고 `카드 데이터 시작`을 찾으세요.
+2. 카드 하나가 `<article> … </article>` 한 덩어리예요. 제목은 `<h2>`, 묶음·주제·아이콘은 `data-group`·`data-topic`·`data-emoji` 값이에요.
+3. 새 카드는 비슷한 카드를 통째로 복사해 붙이고 `id`만 새 이름(예: `n4`)으로 바꾸세요. 이미 있는 `id`는 읽음 기록과 연결돼 있으니 바꾸지 마세요.
+4. 목록, 장 수, 이전·다음 버튼은 열 때 자동으로 맞춰져요.
+
+자세한 안내는 각 파일 맨 위 주석에 있어요.
