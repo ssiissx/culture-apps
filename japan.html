@@ -3,38 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141519" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#1e1d1b">
 <title>알고 가면 보이는 일본</title>
 <link rel="manifest" href="japan.webmanifest">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="icon" type="image/png" href="icons/japan-favicon.png">
 <link rel="apple-touch-icon" href="icons/japan-apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="보이는 일본">
-<style>.hublink{display:inline-block;margin:16px 0 -18px;padding:4px 0;font-size:14px;font-weight:600;color:var(--mute);text-decoration:none}</style>
 <!--
   ✏️ 내용 고치는 법 (Claude 없이)
   메모장 같은 편집기로 이 파일을 열고 '카드 데이터 시작'을 검색하세요.
   · 카드 하나 = <article> 부터 </article> 까지 한 덩어리예요.
       id          영문·숫자 이름. 읽음·즐겨찾기 기록이 이 이름으로 저장되니 이미 있는 id는 바꾸지 마세요.
       data-group  묶음 이름. 목록의 묶음 순서는 파일에 처음 나오는 순서예요.
-      data-topic  주제 한두 단어      data-emoji  아이콘 이모지      data-new  있으면 목록에 NEW 표시
+      data-topic  주제 한두 단어      data-emoji  아이콘 이모지(지금 디자인에선 안 보여요)      data-new  있으면 목록에 '새 글' 표시
       <h2>        카드 제목
       본문        <p>문단</p>  <h3>소제목</h3>  <ul><li>항목</li></ul>  <strong>강조</strong>  <aside>상자</aside>
                   (일본·한국 앱: <div class="scene">장면</div>, <div class="tip">💡 팁</div>)
   · 새 카드는 비슷한 카드 하나를 통째로 복사해 원하는 자리에 붙이고, id를 새 이름(예: n4)으로 바꾸면 돼요.
   · 목록, 장 수, 이전·다음 버튼, 읽는 시간은 파일을 열 때 카드 데이터를 보고 자동으로 만들어져요.
+  · 제목에 처음 쓰는 글자가 들어가면  python tools/fetch_fonts.py  를 한 번 실행하세요(제목 글꼴을 다시 받아요).
   · 카카오톡 미리보기처럼 자바스크립트가 꺼진 화면은 파일에 미리 적어 둔 목록을 보여 줘요.
     카드를 새로 넣었다면 작업 파일 폴더에서  python build.py --refresh "이 파일.html"  을 실행하면 그 목록도 맞춰져요.
 -->
-<script>(function(r){r.classList.add('js');r.lang='ko';r.dataset.app='japan';r.dataset.motif='waves';try{var t=JSON.parse(localStorage.getItem('culture:theme')||'"auto"');if(t!=='auto')r.dataset.theme=t;r.dataset.fs=JSON.parse(localStorage.getItem('culture:fs')||'1')}catch(e){}})(document.documentElement)</script>
-<style>:root{--bg:#f5f3ee;--surface:#fffefb;--ink:#24242a;--ink2:#46454d;--mute:#65636c;--line:#e4e1da;--accent:#b23a26;--soft:#f7e5df;--hl:#f6d3c8;--info:#e8eef6;--infoInk:#22406a;--tip:#e8eef6;--tipInk:#22406a;--barbg:rgba(245,243,238,.97);--t0:#f7e1da;--t1:#e3e9f7;--t2:#e2f0ea;--t3:#e7e5ea;color-scheme:light;--fs:17px;--gut:16px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141519;--surface:#1d1e24;--ink:#e9e8ee;--ink2:#cfced6;--mute:#9b99a4;--line:#33343c;--accent:#f27c60;--soft:#3a221d;--hl:#55291f;--info:#1b2434;--infoInk:#b3c8e8;--tip:#1b2434;--tipInk:#b3c8e8;--barbg:rgba(20,21,25,.97);--t0:#3b231d;--t1:#1f2638;--t2:#1c3029;--t3:#2a2a30;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#141519;--surface:#1d1e24;--ink:#e9e8ee;--ink2:#cfced6;--mute:#9b99a4;--line:#33343c;--accent:#f27c60;--soft:#3a221d;--hl:#55291f;--info:#1b2434;--infoInk:#b3c8e8;--tip:#1b2434;--tipInk:#b3c8e8;--barbg:rgba(20,21,25,.97);--t0:#3b231d;--t1:#1f2638;--t2:#1c3029;--t3:#2a2a30;color-scheme:dark}
+<script>(function(r){r.classList.add('js');r.lang='ko';r.dataset.app='japan';r.dataset.motif='waves';try{var t=JSON.parse(localStorage.getItem('culture:theme')||'"auto"');if(t==='light')r.dataset.theme=t;r.dataset.fs=JSON.parse(localStorage.getItem('culture:fs')||'1')}catch(e){}})(document.documentElement)</script>
+<style>:root{--bg:#1e1d1b;--tone:#2a2926;--tone2:#363531;--ink:#ebeae6;--ink2:#cfccc5;--mute:#a5a39e;--card-ink:#2a2723;--g0:#f0c2c2;--g1:#f0dca6;--g2:#bfdde3;--g3:#d6d4cf;--g4:#f0c2c2;--fs:17px;--gut:16px;--display:"Hahmlet",-apple-system,"Apple SD Gothic Neo",sans-serif;color-scheme:dark}
+/* 화면은 늘 어둡게가 기본. 읽기 설정에서 '밝게'를 고른 사람에게만 밝은 바탕 */
+:root[data-theme="light"]{--bg:#f1f0ed;--tone:#e4e2dd;--tone2:#d7d5cf;--ink:#24231f;--ink2:#44423d;--mute:#67645e;color-scheme:light}
 :root[data-fs="0"]{--fs:15px}:root[data-fs="1"]{--fs:17px}:root[data-fs="2"]{--fs:19px}:root[data-fs="3"]{--fs:21px}
-.grp[data-gi='0'] .tile{background:var(--t0)}.grp[data-gi='1'] .tile{background:var(--t1)}.grp[data-gi='2'] .tile{background:var(--t2)}.grp[data-gi='3'] .tile{background:var(--t3)}.grp[data-gi='4'] .tile{background:var(--t0)}.grp[data-gi='5'] .tile{background:var(--t1)}.grp[data-gi='6'] .tile{background:var(--t2)}.grp[data-gi='7'] .tile{background:var(--t3)}
+/* 묶음마다 파스텔 한 색: 목록의 묶음 면, 오늘의 한 장, 카드 머리, 소제목이 같은 색을 쓴다 */
+[data-gi="0"]{--c:var(--g0)}[data-gi="1"]{--c:var(--g1)}[data-gi="2"]{--c:var(--g2)}[data-gi="3"]{--c:var(--g3)}[data-gi="4"]{--c:var(--g4)}[data-gi="5"]{--c:var(--g0)}[data-gi="6"]{--c:var(--g1)}[data-gi="7"]{--c:var(--g2)}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
@@ -43,6 +44,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 a{color:inherit}
 button{font:inherit;color:inherit;touch-action:manipulation;cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
 html:not(.js) .js-only{display:none!important}
 .wrap{max-width:680px;margin:0 auto;padding-block:0 56px;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
 
@@ -54,136 +56,148 @@ html.js .card.cur{display:block}
 html.js[data-view="card"] .home{display:none}
 
 /* ── 홈 ── */
-.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:28px 0 6px}
-.brand{display:flex;gap:14px;align-items:center;min-width:0}
-.mark{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--accent);color:var(--surface);font-weight:800;font-size:20px;letter-spacing:-.5px}
-.top h1{margin:0;font-size:25px;line-height:1.3;letter-spacing:-.6px;font-weight:800}
-.sub{margin:3px 0 0;color:var(--mute);font-size:14px;line-height:1.5}
-html[data-motif="waves"] .mark{border-radius:9px;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-size:24px;font-weight:700;box-shadow:inset 0 0 0 2px var(--accent),inset 0 0 0 4px var(--surface)}
-html[data-motif="waves"] .top{border-bottom:2px solid var(--accent);padding-bottom:16px;margin-bottom:4px}
-html[data-motif="obang"] .home::before{content:"";display:block;height:5px;margin:0 calc(-1*var(--gut));background:linear-gradient(90deg,#2d68b0 0 20%,#c7392e 20% 40%,#e3b13b 40% 60%,#f3efe6 60% 80%,#2a2a2a 80%)}
-html[data-motif="obang"] .mark{border-radius:50%}
-html[data-motif="dots"] .mark{font-variant-numeric:tabular-nums;font-size:21px;letter-spacing:-1px}
+.hublink{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--mute);text-decoration:none}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:6px 0 0}
+.top h1{margin:0;font-family:var(--display);font-size:32px;line-height:1.15;letter-spacing:-.04em;font-weight:800}
+.sub{margin:8px 0 0;color:var(--ink2);font-size:18px;line-height:1.5}
+.ib{flex:none;display:grid;place-items:center;width:44px;height:44px;margin:-2px -8px 0 0;border:0;border-radius:12px;background:transparent;font-size:18px;font-weight:700;color:var(--ink)}
+.ib:active{background:var(--tone)}
+.ib svg{width:22px;height:22px}
 
-.ib{flex:none;display:grid;place-items:center;width:44px;height:44px;margin:-4px -8px 0 0;border:0;border-radius:12px;background:transparent;font-size:18px;font-weight:700}
-.ib:active{background:var(--soft)}
+/* 오늘의 한 장: 직전에 읽은 장의 다음 장을 묶음 색 카드 한 장으로 크게 */
+.today{margin-top:22px;perspective:1200px}
+.deal{display:flex;flex-direction:column;justify-content:space-between;min-height:min(470px,62svh);padding:24px 22px 22px;border-radius:22px;background:var(--c);color:var(--card-ink);transform-origin:50% 100%}
+.deal .dm{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:700}
+.deal .q{margin:28px 0;font-family:var(--display);font-size:clamp(30px,9.4vw,42px);font-weight:800;line-height:1.16;letter-spacing:-.04em}
+.deal .note{margin:0 0 14px;font-size:15px;font-weight:600;line-height:1.45;opacity:.78}
+.deal .row2{display:flex;gap:10px}
+.go{flex:1;display:flex;justify-content:space-between;align-items:center;min-height:54px;padding:0 20px;border-radius:999px;background:var(--card-ink);color:var(--c);font-size:17px;font-weight:700;text-decoration:none}
+.flip{flex:none;min-height:54px;padding:0 20px;border:0;border-radius:999px;background:rgba(42,39,35,.1);color:var(--card-ink);font-size:16px;font-weight:700}
+.go:active,.flip:active{transform:scale(.96)}
+.deal.turn{animation:turn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes turn{45%{transform:rotateX(-82deg);opacity:.4}}
 
-.stats{margin:18px 0 0;padding:14px 16px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
-.sline{display:flex;justify-content:space-between;font-size:14px;color:var(--ink2)}
-.sline b{font-size:17px;color:var(--ink)}
-.nfav{color:var(--accent);font-weight:700}
-.meter{height:6px;margin-top:10px;border-radius:9px;background:var(--line);overflow:hidden}
-.meter i{display:block;height:100%;width:0;border-radius:9px;background:var(--accent);transition:width .4s}
-.resume{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);text-decoration:none;font-size:14.5px}
-.resume span{flex:none;color:var(--accent);font-weight:700}
-.resume b{flex:1;min-width:0;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.resume::after{content:"›";color:var(--mute);font-size:20px;line-height:1}
+.stats{margin-top:18px}
+.sline{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:16px;color:var(--mute)}
+.sline b{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-right:6px}
+.nfav{font-weight:600}
+.dots{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--tone)}
+.dots i.on{background:var(--c)}
 
-.filters{display:flex;gap:4px;margin:14px 0 0;padding:4px;border-radius:13px;background:var(--line)}
-.filters button{flex:1;min-height:38px;border:0;border-radius:10px;background:transparent;font-size:14.5px;font-weight:600;color:var(--ink2)}
-.filters button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.sec{margin:44px 0 0;font-size:22px;font-weight:800;letter-spacing:-.02em}
+.filters{display:flex;gap:22px;margin-top:8px}
+.filters button{min-height:44px;padding:0;border:0;border-bottom:3px solid transparent;background:transparent;font-size:16px;font-weight:700;color:var(--mute)}
+.filters button[aria-selected="true"]{color:var(--ink);border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:2px}
+.chips a{display:inline-flex;align-items:center;min-height:40px;font-size:15px;font-weight:600;color:var(--ink2);text-decoration:none}
 
-.chips{display:flex;gap:8px;overflow-x:auto;margin:14px calc(-1*var(--gut)) 0;padding:2px var(--gut);scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chips a{flex:none;padding:8px 15px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink2);text-decoration:none}
-
-.grp{scroll-margin-top:12px}
-.gh{display:flex;justify-content:space-between;align-items:baseline;margin:30px 0 2px;font-size:15px;font-weight:800;color:var(--accent);letter-spacing:.02em}
-.gc{font-size:13px;font-weight:500;color:var(--mute);letter-spacing:0}
-.toc{list-style:none;margin:0;padding:0}
-.toc li{border-bottom:1px solid var(--line);scroll-margin-top:30vh}
-.toc a{display:flex;align-items:center;gap:14px;min-height:68px;padding:12px 2px;text-decoration:none}
-.toc a:active{background:var(--soft)}
-.tile{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:13px;font-size:24px;line-height:1}
-.t{flex:1;min-width:0;font-size:16px;font-weight:650;line-height:1.42;letter-spacing:-.2px}
-.f{display:block;margin-top:2px;font-size:13px;font-weight:400;color:var(--mute);letter-spacing:0}
-.new{display:inline-block;vertical-align:2px;margin-left:6px;padding:1px 6px;border-radius:6px;background:var(--accent);color:var(--surface);font-size:10.5px;font-weight:800;letter-spacing:.04em}
-.st{flex:none;display:flex;gap:4px;color:var(--accent);font-size:15px;font-weight:700}
-li.fav .st::before{content:"★"}
-li.read .st::after{content:"✓"}
-li.read .t{color:var(--mute)}
-li.read .tile{opacity:.6}
+.grp{margin-top:14px;padding:22px 20px 12px;border-radius:22px;background:var(--c);color:var(--card-ink);scroll-margin-top:12px}
+.grp+.grp{margin-top:10px}
+.gh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0;font-family:var(--display);font-size:34px;font-weight:800;line-height:1.1;letter-spacing:-.04em}
+.gc{font-size:16px;font-weight:700;letter-spacing:0}
+.toc{list-style:none;margin:12px 0 0;padding:0}
+.toc li{scroll-margin-top:30vh;border-radius:12px}
+.toc a{display:flex;align-items:baseline;gap:12px;padding:10px 0;text-decoration:none}
+.toc a::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;border:2px solid currentColor;transform:translateY(-1px)}
+.toc a:active{opacity:.6}
+.tile{display:none}
+.t{flex:1;min-width:0;font-size:17px;font-weight:600;line-height:1.42;letter-spacing:-.01em}
+.f{display:block;margin-top:2px;font-size:14px;font-weight:600;opacity:.72;letter-spacing:0}
+.new{margin-left:6px;font-size:13px;font-weight:800}
+.f .new{margin:0}
+.st{flex:none;align-self:center;width:18px;height:18px;visibility:hidden}
+li.fav .st{visibility:visible}
+li.read a{opacity:.55}
+li.read a::before{background:currentColor}
 li.flash{animation:flash 1.6s ease-out}
-@keyframes flash{0%,30%{background:var(--soft)}100%{background:transparent}}
-.empty{margin:36px 0;padding:22px;border-radius:16px;background:var(--surface);border:1px dashed var(--line);text-align:center;color:var(--ink2);font-size:15px}
-.foot{margin:34px 0 0;text-align:center;font-size:12.5px;color:var(--mute)}
+@keyframes flash{0%,30%{background:rgba(42,39,35,.12)}100%{background:transparent}}
+.empty{margin:20px 0;padding:22px;border-radius:18px;background:var(--tone);text-align:center;color:var(--ink2);font-size:16px}
+.foot{margin:34px 0 0;font-size:15px;line-height:1.55;color:var(--mute)}
 
 /* ── 카드 ── */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:2px;margin:0 calc(-1*var(--gut));padding:0 calc(var(--gut) - 6px);min-height:50px;background:var(--barbg);-webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid var(--line)}
-.back{flex:none;display:flex;align-items:center;min-height:44px;padding:0 10px 0 6px;font-size:16px;font-weight:600;color:var(--accent);text-decoration:none}
-.bt{flex:1;min-width:0;text-align:center;font-size:13.5px;font-weight:600;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:2px;margin:0 calc(-1*var(--gut));padding:0 calc(var(--gut) - 6px);min-height:52px;background:var(--bg)}
+.back{flex:none;display:flex;align-items:center;min-height:44px;padding:0 10px 0 6px;font-size:16px;font-weight:700;color:var(--ink);text-decoration:none}
+.bt{flex:1;min-width:0;text-align:center;font-size:14px;font-weight:600;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bar .ib{margin:0}
-.fav{font-size:21px;color:var(--mute)}
-.fav[aria-pressed="true"]{color:var(--accent)}
-.prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%}
-.ch{padding:26px 0 6px}
-.meta{font-size:13px;color:var(--mute);margin-bottom:10px;letter-spacing:.01em}
-.card h2{margin:0 0 18px;font-size:calc(var(--fs) * 1.42);line-height:1.38;letter-spacing:-.03em;font-weight:800;text-wrap:balance}
-.ch .em{display:block;font-size:44px;line-height:1;margin-bottom:14px}
+.fav svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.fav[aria-pressed="true"] svg{fill:var(--c);stroke:var(--c)}
+.prog{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--c);transform:scaleX(0);transform-origin:0 50%}
+.ch{margin-top:6px;padding:22px 22px 26px;border-radius:22px;background:var(--c);color:var(--card-ink)}
+.meta{font-size:15px;font-weight:700}
+.card h2{margin:40px 0 0;font-family:var(--display);font-size:calc(var(--fs) * 1.9);line-height:1.18;letter-spacing:-.04em;font-weight:800;text-wrap:balance}
 
-.card{font-size:var(--fs);line-height:1.8;letter-spacing:-.005em}
-.card p{margin:0 0 1.15em;text-wrap:pretty}
-.card h3{margin:2.3em 0 .75em;font-size:1.13em;line-height:1.45;font-weight:750;letter-spacing:-.02em}
-.card h3::before{content:"";display:block;width:22px;height:3px;margin-bottom:.8em;border-radius:3px;background:var(--accent)}
-.card ul{margin:0 0 1.15em;padding-left:1.15em}
+.card{font-size:var(--fs);line-height:1.78;letter-spacing:-.005em}
+.card .ch+p{margin-top:30px;font-size:calc(var(--fs) * 1.15);line-height:1.6;font-weight:600}
+.card p{margin:0 0 1.1em;text-wrap:pretty}
+.card h3{margin:2.2em 0 .6em;font-family:var(--display);font-size:calc(var(--fs) * 1.42);line-height:1.3;font-weight:800;letter-spacing:-.035em;color:var(--c)}
+.card ul{margin:0 0 1.1em;padding-left:1.15em}
 .card li{margin:.35em 0;padding-left:.15em}
-.card li::marker{color:var(--accent)}
-.card strong{font-weight:700;background:linear-gradient(transparent 60%,var(--hl) 60%);padding:0 1px}
-.card aside,.card .tip{margin:0 0 1.15em;padding:14px 16px;border-radius:14px;background:var(--info);color:var(--infoInk);font-size:.93em;line-height:1.72}
-.card aside strong,.card .tip strong{background:none;color:inherit}
-.card .scene{margin:0 0 1.6em;padding:3px 0 3px 15px;border-left:3px solid var(--accent);color:var(--ink2)}
-.card .tag{display:block;margin-bottom:5px;font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.02em}
-.card .key{margin:1.4em 0 1.15em;padding:14px 16px;border-radius:14px;background:var(--soft);font-weight:700}
+.card li::marker{color:var(--c)}
+.card strong{font-weight:700;color:var(--c)}
+.card aside,.card .tip{margin:1.5em 0;padding:18px 20px;border-radius:16px;background:var(--tone);font-size:.95em;line-height:1.68}
+.card aside strong,.card .tip strong{color:inherit}
+.card .scene{margin:30px 0 1.6em;padding:18px 20px;border-radius:16px;background:var(--tone);color:var(--ink2)}
+.card .tag{display:block;margin-bottom:6px;font-size:14px;font-weight:700;color:var(--c)}
+.card .key{margin:1.4em 0 1.1em;padding:16px 20px;border-radius:16px;background:var(--c);color:var(--card-ink);font-weight:700}
+/* 밝게: 파스텔 글자는 밝은 바탕에서 흐리니 먹색으로 */
+:root[data-theme="light"] .card h3,:root[data-theme="light"] .card .tag{color:var(--ink)}
+:root[data-theme="light"] .card strong{color:inherit;background:var(--c);padding:0 2px;border-radius:3px}
+:root[data-theme="light"] .card li::marker{color:var(--ink2)}
 
-.end{margin-top:2.6em;padding-top:22px;border-top:1px solid var(--line)}
-.done-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:54px;border:1.5px solid var(--accent);border-radius:15px;background:transparent;color:var(--accent);font-size:16px;font-weight:700}
-.done-btn .ck{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;font-size:13px}
-.done-btn[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.end{margin-top:52px}
+.done-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:56px;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font-size:17px;font-weight:700}
+.done-btn .ck{display:none}
+.done-btn[aria-pressed="true"]{background:var(--tone);color:var(--ink)}
+.done-btn[aria-pressed="true"] .ck{display:inline}
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.pager a,.pager .done{display:flex;flex-direction:column;gap:4px;min-height:84px;padding:12px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--line);text-decoration:none;font-size:14.5px;font-weight:600;line-height:1.45}
-.pager a span,.pager .done span{font-size:12.5px;font-weight:700;color:var(--accent)}
-.pager .nx,.pager .done{text-align:right}
-
-.tolist{display:block;margin:16px 0 0;padding:10px;text-align:center;font-size:14.5px;font-weight:600;color:var(--mute);text-decoration:none}
+.pager a,.pager .done{display:flex;flex-direction:column;gap:14px;min-height:120px;padding:16px 18px 20px;border-radius:22px;background:var(--tone);text-decoration:none;font-family:var(--display);font-size:17px;font-weight:800;line-height:1.3;letter-spacing:-.02em}
+.pager a span,.pager .done span{font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;font-size:14px;font-weight:700;letter-spacing:0;opacity:.75}
+.pager .nx{background:var(--n,var(--tone));color:var(--card-ink)}
+.pager .none{background:none}
+.pager a:active{transform:scale(.98)}
+.tolist{display:flex;align-items:center;justify-content:center;min-height:48px;margin:14px 0 0;font-size:15px;font-weight:600;color:var(--mute);text-decoration:none}
 
 /* ── 자바스크립트가 꺼진 화면(파일 미리보기 등) ── */
 .nojs-back{display:none}
-html:not(.js) body:has(.card:target) .nojs-back{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:inline-flex;align-items:center;min-height:40px;margin:10px 0 0;padding:0 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:15px;font-weight:700;color:var(--accent);text-decoration:none}
+html:not(.js) body:has(.card:target) .nojs-back{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:inline-flex;align-items:center;min-height:44px;margin:10px 0 0;padding:0 18px;border-radius:999px;background:var(--tone);font-size:15px;font-weight:700;color:var(--ink);text-decoration:none}
 html:not(.js) .card{scroll-margin-top:calc(60px + env(safe-area-inset-top,0px))}
-html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · " attr(data-topic);display:block;padding:22px 0 10px;font-size:14px;line-height:1.5;color:var(--mute)}
+html:not(.js) .card::before{content:attr(data-group) " · " attr(data-topic);display:block;padding:22px 0 10px;font-size:15px;line-height:1.5;color:var(--mute)}
 
 /* ── 설정 시트 ── */
-.sheet{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;background:rgba(0,0,0,.38);animation:fade .18s}
-.panel{width:100%;max-width:680px;margin:0 auto;padding:8px max(20px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));border-radius:22px 22px 0 0;background:var(--surface);animation:up .22s cubic-bezier(.2,.8,.3,1)}
-.grab{width:38px;height:5px;margin:0 auto 12px;border-radius:5px;background:var(--line)}
-.panel h2{margin:0 0 14px;font-size:18px}
-.row{margin:0 0 14px}
-.rl{display:block;margin-bottom:7px;font-size:13.5px;font-weight:700;color:var(--mute)}
-.seg{display:flex;gap:4px;padding:4px;border-radius:13px;background:var(--line)}
-.seg button{flex:1;min-height:40px;border:0;border-radius:10px;background:transparent;font-size:14.5px;font-weight:600;color:var(--ink2)}
-.seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.14)}
-.preview{margin:0 0 18px;padding:12px 14px;border-radius:12px;background:var(--bg);font-size:var(--fs);line-height:1.75}
-.reset,.close{display:block;width:100%;min-height:48px;border:0;border-radius:13px;font-size:15.5px;font-weight:700}
+.sheet{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-end;background:rgba(0,0,0,.5);animation:fade .18s}
+.panel{width:100%;max-width:680px;margin:0 auto;padding:8px max(20px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));border-radius:22px 22px 0 0;background:var(--tone);animation:up .22s cubic-bezier(.2,.8,.3,1)}
+.grab{width:38px;height:5px;margin:0 auto 12px;border-radius:5px;background:var(--tone2)}
+.panel h2{margin:0 0 16px;font-family:var(--display);font-size:24px;font-weight:800;letter-spacing:-.03em}
+.row{margin:0 0 16px}
+.rl{display:block;margin-bottom:8px;font-size:15px;font-weight:700;color:var(--ink2)}
+.seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--bg)}
+.seg button{flex:1;min-height:42px;border:0;border-radius:999px;background:transparent;font-size:15px;font-weight:600;color:var(--mute)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.preview{margin:0 0 18px;padding:14px 16px;border-radius:14px;background:var(--bg);font-size:var(--fs);line-height:1.75}
+.reset,.close{display:block;width:100%;min-height:50px;border:0;border-radius:999px;font-size:16px;font-weight:700}
 .reset{background:transparent;color:var(--mute);font-weight:600;margin-bottom:6px}
-.reset[data-armed]{color:var(--accent);font-weight:700}
-.close{background:var(--accent);color:var(--surface)}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:30;max-width:calc(100% - 40px);padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14.5px;font-weight:600;opacity:0;transform:translate(-50%,12px);transition:opacity .2s,transform .2s;pointer-events:none}
+.reset[data-armed]{color:var(--ink);font-weight:700}
+.close{background:var(--ink);color:var(--bg)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:30;max-width:calc(100% - 40px);padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:15px;font-weight:600;opacity:0;transform:translate(-50%,12px);transition:opacity .2s,transform .2s;pointer-events:none}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @keyframes fade{from{opacity:0}}
 @keyframes up{from{transform:translateY(40px);opacity:.4}}
+@media (prefers-reduced-motion:no-preference){.grp{animation:rise .55s cubic-bezier(.2,.7,.2,1) both}.grp:nth-child(2){animation-delay:80ms}.grp:nth-child(3){animation-delay:160ms}@keyframes rise{from{opacity:0;transform:translateY(20px)}}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media (min-width:700px){.top h1{font-size:28px}.card h2{font-size:calc(var(--fs) * 1.55)}}
+@media (min-width:700px){.top h1{font-size:36px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="home" id="list">
 <a class="hublink" href="./">‹ 교양 앱</a>
-<header class="top"><div class="brand"><span class="mark">日</span><div><h1>알고 가면 보이는 일본</h1><p class="sub">역사와 사건, IP, 요즘 문화, 그리고 그늘까지 · <span class="ntotal">53</span>장</p></div></div>
+<header class="top"><div class="brand"><div><h1>알고 가면 보이는 일본</h1><p class="sub">역사와 사건, IP, 요즘 문화, 그리고 그늘까지 · <span class="ntotal">53</span>장</p></div></div>
 <button class="ib aa js-only" type="button" aria-label="읽기 설정">가</button></header>
-<div class="stats js-only"><div class="sline"><span><b class="nread">0</b> / <span class="ntotal">53</span>장 읽음</span><span class="nfav"></span></div><div class="meter"><i></i></div>
-<a class="resume" hidden href="#"><span>이어 읽기</span><b></b></a></div>
-<div class="filters js-only" role="tablist"><button type="button" data-f="all" aria-selected="true">전체</button><button type="button" data-f="unread" aria-selected="false">안 읽음</button><button type="button" data-f="fav" aria-selected="false">★ 즐겨찾기</button></div>
+<section class="today js-only" aria-label="오늘의 한 장"></section>
+<div class="stats js-only"><div class="sline"><span><b class="nread">0</b>/ <span class="ntotal">53</span>장 읽음</span><span class="nfav"></span></div><div class="dots" aria-hidden="true"></div></div>
+<h2 class="sec">묶음별로 보기</h2>
+<div class="filters js-only" role="tablist"><button type="button" data-f="all" aria-selected="true">전체</button><button type="button" data-f="unread" aria-selected="false">안 읽음</button><button type="button" data-f="fav" aria-selected="false">즐겨찾기</button></div>
 <nav class="chips"><a href="#g0">역사·사건</a><a href="#g1">IP</a><a href="#g2">현대문화</a><a href="#g3">그늘</a></nav>
 <p class="empty" hidden></p>
 <div id="toc"><section class="grp" id="g0" data-gi="0"><h2 class="gh">역사·사건<span class="gc"><span class="gread"></span>16장</span></h2><ol class="toc"><li id="i-c0" data-id="c0"><a href="#c0"><span class="tile">🏯</span><span class="t">천하를 다툰 세 영웅과 일본의 성<span class="f">전국시대 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c1" data-id="c1"><a href="#c1"><span class="tile">🚢</span><span class="t">200년 동안 문을 닫은 나라<span class="f">에도 막부 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c2" data-id="c2"><a href="#c2"><span class="tile">⚔️</span><span class="t">흑선이 오고, 사무라이가 사라졌다<span class="f">메이지 유신 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c3" data-id="c3"><a href="#c3"><span class="tile">🥷</span><span class="t">진짜 닌자는 검은 옷을 입지 않았다<span class="f">닌자와 사무라이 · 12분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c4" data-id="c4"><a href="#c4"><span class="tile">🌞</span><span class="t">도쿄 올림픽과 오사카 만박, 일본이 가장 빨랐던 시절<span class="f">고도성장기와 만박 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c5" data-id="c5"><a href="#c5"><span class="tile">🫧</span><span class="t">도쿄 땅을 팔면 미국을 살 수 있다던 시절<span class="f">버블 경제 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c6" data-id="c6"><a href="#c6"><span class="tile">🏚️</span><span class="t">고베가 무너진 날, 자원봉사가 시작됐다<span class="f">1995 한신·아와지 대지진 · 12분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c7" data-id="c7"><a href="#c7"><span class="tile">🌊</span><span class="t">2011년 3월 11일, 바다가 마을을 삼키고 원전이 멈췄다<span class="f">2011 동일본 대지진과 후쿠시마 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c8" data-id="c8"><a href="#c8"><span class="tile">⛩️</span><span class="t">도리이가 있으면 신사, 향 연기가 나면 절<span class="f">신사와 절 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c9" data-id="c9"><a href="#c9"><span class="tile">🐻</span><span class="t">150년 전까지 홋카이도는 '에조치'였다<span class="f">홋카이도와 아이누 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c10" data-id="c10"><a href="#c10"><span class="tile">🕊️</span><span class="t">원폭 돔은 왜 부수지 않았을까<span class="f">히로시마 원폭 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c11" data-id="c11"><a href="#c11"><span class="tile">📜</span><span class="t">조선의 사절단이 에도까지 행렬했다<span class="f">조선통신사 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c12" data-id="c12"><a href="#c12"><span class="tile">🌺</span><span class="t">일본이 아니었던 왕국, 류큐<span class="f">류큐와 오키나와 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c13" data-id="c13"><a href="#c13"><span class="tile">🔥</span><span class="t">지진보다 무서웠던 헛소문<span class="f">1923 간토 대지진과 조선인 학살 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c14" data-id="c14"><a href="#c14"><span class="tile">🏯</span><span class="t">영주들을 파산시킨 1년 걸러 출장<span class="f">참근교대 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-n1" data-id="n1"><a href="#n1"><span class="tile">📅</span><span class="t">2026년은 일본에서 '레이와 8년'이다<span class="new">NEW</span><span class="f">연호 · 7분</span></span><span class="st" aria-hidden="true"></span></a></li></ol></section><section class="grp" id="g1" data-gi="1"><h2 class="gh">IP<span class="gc"><span class="gread"></span>13장</span></h2><ol class="toc"><li id="i-c15" data-id="c15"><a href="#c15"><span class="tile">⚡</span><span class="t">곤충 채집 소년이 만든 세계 최대 프랜차이즈<span class="f">포켓몬 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c16" data-id="c16"><a href="#c16"><span class="tile">🍄</span><span class="t">교토의 화투 회사가 마리오를 만들기까지<span class="f">닌텐도 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c17" data-id="c17"><a href="#c17"><span class="tile">📚</span><span class="t">독자 엽서 한 장이 연재를 끝낸다<span class="f">소년 점프 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c18" data-id="c18"><a href="#c18"><span class="tile">🧚</span><span class="t">미야자키 하야오가 그린 일본<span class="f">스튜디오 지브리 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c19" data-id="c19"><a href="#c19"><span class="tile">🦖</span><span class="t">1954년, 핵의 공포가 괴수가 되다<span class="f">고질라 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c20" data-id="c20"><a href="#c20"><span class="tile">🐱</span><span class="t">헬로키티에게 입이 없는 이유<span class="f">산리오 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c21" data-id="c21"><a href="#c21"><span class="tile">🗡️</span><span class="t">다이쇼 시대의 귀살대가 흥행 기록을 갈아치우다<span class="f">귀멸의 칼날 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c22" data-id="c22"><a href="#c22"><span class="tile">🔵</span><span class="t">도라에몽은 원래 노란색이었다<span class="f">도라에몽 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c23" data-id="c23"><a href="#c23"><span class="tile">🎵</span><span class="t">실체 없는 가수가 콘서트를 연다<span class="f">하츠네 미쿠 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c24" data-id="c24"><a href="#c24"><span class="tile">🏴‍☠️</span><span class="t">밀짚모자 해적단의 깃발이 시위 현장에 휘날렸다<span class="f">원피스 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c25" data-id="c25"><a href="#c25"><span class="tile">🐉</span><span class="t">게임을 사려고 학교를 빼먹은 날<span class="f">드래곤 퀘스트 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c26" data-id="c26"><a href="#c26"><span class="tile">🦸</span><span class="t">일요일 아침의 영웅들, 50년 만의 마침표<span class="f">슈퍼 전대와 가면라이더 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-n2" data-id="n2"><a href="#n2"><span class="tile">🖍️</span><span class="t">짱구는 원래 어른 잡지에 실린 만화였다<span class="new">NEW</span><span class="f">크레용 신짱 · 5분</span></span><span class="st" aria-hidden="true"></span></a></li></ol></section><section class="grp" id="g2" data-gi="2"><h2 class="gh">현대문화<span class="gc"><span class="gread"></span>14장</span></h2><ol class="toc"><li id="i-c27" data-id="c27"><a href="#c27"><span class="tile">🍜</span><span class="t">컵라면은 오사카의 작은 창고에서 태어났다<span class="f">컵라면 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c28" data-id="c28"><a href="#c28"><span class="tile">🎤</span><span class="t">가라오케는 고베의 밴드맨이 만들었다<span class="f">가라오케 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c29" data-id="c29"><a href="#c29"><span class="tile">🎮</span><span class="t">전자상가는 어떻게 오타쿠의 성지가 됐나<span class="f">오타쿠 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c30" data-id="c30"><a href="#c30"><span class="tile">🌃</span><span class="t">40년 전 노래가 유튜브에서 역주행하다<span class="f">시티팝 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c31" data-id="c31"><a href="#c31"><span class="tile">🥤</span><span class="t">산꼭대기에도 자판기가 있다<span class="f">자판기 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c32" data-id="c32"><a href="#c32"><span class="tile">😆</span><span class="t">고맙다는 말도, 에스컬레이터 서는 쪽도 지역마다 다르다<span class="f">일본의 사투리와 동서 차이 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c33" data-id="c33"><a href="#c33"><span class="tile">♨️</span><span class="t">문신이 있으면 온천에 못 들어간다?<span class="f">온천과 센토 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c34" data-id="c34"><a href="#c34"><span class="tile">🚄</span><span class="t">평균 지연 1.4분, 60년 동안 승객 사망 사고 0건<span class="f">신칸센 · 12분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c35" data-id="c35"><a href="#c35"><span class="tile">🗑️</span><span class="t">쓰레기통은 없는데 거리는 깨끗하다<span class="f">쓰레기와 분리수거 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c36" data-id="c36"><a href="#c36"><span class="tile">🏪</span><span class="t">편의점에서 택배도 보내고 공과금도 낸다<span class="f">콘비니 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c37" data-id="c37"><a href="#c37"><span class="tile">🍱</span><span class="t">기차역마다 도시락이 다르다<span class="f">에키벤 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c38" data-id="c38"><a href="#c38"><span class="tile">🌸</span><span class="t">일본의 벚꽃은 거의 모두 한 나무의 복제품이다<span class="f">벚꽃과 하나미 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c39" data-id="c39"><a href="#c39"><span class="tile">🤼</span><span class="t">스모 모래판에 여성은 오를 수 없다?<span class="f">스모 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-n3" data-id="n3"><a href="#n3"><span class="tile">🍣</span><span class="t">회전초밥은 맥주 공장의 컨베이어 벨트에서 태어났다<span class="new">NEW</span><span class="f">회전초밥 · 5분</span></span><span class="st" aria-hidden="true"></span></a></li></ol></section><section class="grp" id="g3" data-gi="3"><h2 class="gh">그늘<span class="gc"><span class="gread"></span>10장</span></h2><ol class="toc"><li id="i-c40" data-id="c40"><a href="#c40"><span class="tile">🌀</span><span class="t">광장에 모이는 10대들, 그리고 '오버도즈'<span class="f">토요코와 10대의 고립 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c41" data-id="c41"><a href="#c41"><span class="tile">🥂</span><span class="t">캬바쿠라와 호스트클럽, 밤의 비즈니스<span class="f">캬바쿠라·호스트 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c42" data-id="c42"><a href="#c42"><span class="tile">🎙️</span><span class="t">"어서 오세요, 주인님"과 체키 한 장, 오시카쓰 경제<span class="f">메이드 카페와 지하 아이돌 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c43" data-id="c43"><a href="#c43"><span class="tile">💼</span><span class="t">영어 사전에 오른 일본어 'karoshi'<span class="f">과로사와 블랙 기업 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c44" data-id="c44"><a href="#c44"><span class="tile">🕶️</span><span class="t">명함을 내밀던 조직, 은행 계좌도 못 만든다<span class="f">야쿠자 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c45" data-id="c45"><a href="#c45"><span class="tile">👶</span><span class="t">한 해에 도시 하나가 사라진다, 일본의 인구 감소<span class="f">저출생과 인구 감소 · 12분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c46" data-id="c46"><a href="#c46"><span class="tile">🏚️</span><span class="t">아무도 살지 않는 집 900만 채<span class="f">빈집과 고독사 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c47" data-id="c47"><a href="#c47"><span class="tile">🚪</span><span class="t">방문을 닫은 146만 명<span class="f">히키코모리 · 12분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c48" data-id="c48"><a href="#c48"><span class="tile">🎰</span><span class="t">도박이 아니라는 도박<span class="f">파칭코 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li><li id="i-c49" data-id="c49"><a href="#c49"><span class="tile">🧭</span><span class="t">일본에서 태어났지만 외국인인 사람들<span class="f">재일 코리안 · 11분</span></span><span class="st" aria-hidden="true"></span></a></li></ol></section></div>
@@ -2132,7 +2146,7 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
 <div class="grab"></div><h2 id="sheet-t">읽기 설정</h2>
 <div class="row"><span class="rl">글자 크기</span><div class="seg" data-k="fs"><button type="button" data-v="0">작게</button><button type="button" data-v="1">보통</button><button type="button" data-v="2">크게</button><button type="button" data-v="3">아주 크게</button></div></div>
 <p class="preview">가장 선명한 기억도 조금씩 다시 쓰여요. 글자 크기를 바꾸면 이 문장도 함께 바뀌어요.</p>
-<div class="row"><span class="rl">화면</span><div class="seg" data-k="theme"><button type="button" data-v="auto">자동</button><button type="button" data-v="light">밝게</button><button type="button" data-v="dark">어둡게</button></div></div>
+<div class="row"><span class="rl">화면</span><div class="seg" data-k="theme"><button type="button" data-v="dark">어둡게</button><button type="button" data-v="light">밝게</button></div></div>
 <button class="reset" type="button">읽은 기록 지우기</button>
 <button class="close" type="button">닫기</button></div></div>
 <div class="toast" role="status" aria-live="polite"></div>
@@ -2143,6 +2157,7 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
   function $(s, el) { return (el || d).querySelector(s); }
   function $$(s, el) { return [].slice.call((el || d).querySelectorAll(s)); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.8z"/></svg>';
 
   // ── 1. 카드 데이터(<main id="cards">의 article)를 읽어 목록·버튼을 만든다 ──
   var groups = [], gIndex = {};
@@ -2162,36 +2177,36 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
   info.forEach(function (it, n) {
     var c = it.el, prev = info[n - 1], next = info[n + 1], h = $('h2', c);
     var head = d.createElement('header');
-    head.className = 'ch';
-    head.innerHTML = '<div class="meta">' + esc(it.group) + (it.topic ? ' · ' + esc(it.topic) : '') + ' · 약 ' + it.mins + '분</div>' +
-      '<span class="em">' + esc(it.emoji) + '</span>';
+    head.className = 'ch'; c.dataset.gi = it.gi;
+    head.innerHTML = '<div class="meta">' + esc(it.group) + (it.topic ? ' · ' + esc(it.topic) : '') + ' · ' + it.mins + '분</div>';
     if (h) { c.insertBefore(head, h); head.appendChild(h); } else c.insertBefore(head, c.firstChild);
     c.insertAdjacentHTML('afterbegin',
       '<div class="bar"><a class="back" href="#i-' + it.id + '" aria-label="목록으로">‹ 목록</a>' +
       '<span class="bt">' + esc(it.group) + '</span>' +
-      '<button class="ib fav" type="button" aria-pressed="false" aria-label="즐겨찾기">☆</button>' +
+      '<button class="ib fav" type="button" aria-pressed="false" aria-label="즐겨찾기">' + STAR + '</button>' +
       '<button class="ib aa" type="button" aria-label="읽기 설정">가</button><span class="prog"></span></div>');
     c.insertAdjacentHTML('beforeend',
       '<footer class="end"><button class="done-btn" type="button" aria-pressed="false"><span class="ck">✓</span><span class="lb">다 읽었어요</span></button>' +
       '<nav class="pager">' +
       (prev ? '<a class="pv" href="#' + prev.id + '"><span>← 이전</span>' + esc(prev.title) + '</a>' : '<span class="pv none"></span>') +
-      (next ? '<a class="nx" href="#' + next.id + '"><span>다음 →</span>' + esc(next.title) + '</a>'
-            : '<span class="nx done"><span>마지막 장</span>끝까지 읽었어요 🎉</span>') +
-      '</nav><a class="tolist" href="#i-' + it.id + '">☰ 목록으로</a></footer>');
+      (next ? '<a class="nx" href="#' + next.id + '" style="--n:var(--g' + (next.gi % 5) + ')"><span>다음 장 →</span>' + esc(next.title) + '</a>'
+            : '<span class="nx done"><span>마지막 장</span>끝까지 다 읽었어요</span>') +
+      '</nav><a class="tolist" href="#i-' + it.id + '">목록으로</a></footer>');
   });
 
   $('#toc').innerHTML = groups.map(function (g, gi) {
     return '<section class="grp" id="g' + gi + '" data-gi="' + gi + '"><h2 class="gh">' + esc(g.name) +
-      '<span class="gc"><span class="gread"></span>' + g.items.length + '장</span></h2><ol class="toc">' +
+      '<span class="gc"><span class="gread">0</span> / ' + g.items.length + '</span></h2><ol class="toc">' +
       g.items.map(function (it) {
-        return '<li id="i-' + it.id + '" data-id="' + it.id + '"><a href="#' + it.id + '"><span class="tile">' + esc(it.emoji) + '</span>' +
-          '<span class="t">' + esc(it.title) + (it.isNew ? '<span class="new">NEW</span>' : '') +
-          '<span class="f">' + (it.topic ? esc(it.topic) + ' · ' : '') + it.mins + '분</span></span>' +
-          '<span class="st" aria-hidden="true"></span></a></li>';
+        return '<li id="i-' + it.id + '" data-id="' + it.id + '"><a href="#' + it.id + '">' +
+          '<span class="t">' + esc(it.title) +
+          '<span class="f">' + (it.isNew ? '<b class="new">새 글</b> · ' : '') + (it.topic ? esc(it.topic) + ' · ' : '') + it.mins + '분</span></span>' +
+          '<svg class="st" viewBox="0 0 24 24" role="img" aria-label="즐겨찾기"><path fill="currentColor" d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.8z"/></svg></a></li>';
       }).join('') + '</ol></section>';
   }).join('');
   $('.chips').innerHTML = groups.map(function (g, gi) { return '<a href="#g' + gi + '">' + esc(g.name) + '</a>'; }).join('');
   $$('.ntotal').forEach(function (e) { e.textContent = info.length; });
+  $('.dots').innerHTML = info.map(function (it) { return '<i data-gi="' + it.gi + '"></i>'; }).join('');
 
   // ── 2. 읽음·즐겨찾기·화면 전환 ──
   var read = new Set(load(APP + ':read', [])), fav = new Set(load(APP + ':fav', []));
@@ -2219,29 +2234,48 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
       var vis = 0, r = 0;
       $$('li', g).forEach(function (li) { if (!li.hidden) vis++; if (read.has(li.dataset.id)) r++; });
       g.hidden = vis === 0; if (vis) any = true;
-      $('.gread', g).textContent = r ? r + ' 읽음 · ' : '';
+      $('.gread', g).textContent = r;
     });
     var empty = $('.empty');
     empty.hidden = any;
     empty.textContent = filter === 'fav'
-      ? '아직 즐겨찾기한 카드가 없어요. 카드 위쪽의 ☆를 누르면 여기에 모여요.'
-      : '모든 카드를 다 읽었어요! 🎉';
+      ? '아직 즐겨찾기한 카드가 없어요. 카드 위쪽의 별을 누르면 여기에 모여요.'
+      : '모든 카드를 다 읽었어요!';
     var n = info.filter(function (it) { return read.has(it.id); }).length;
     $('.nread').textContent = n;
-    $('.meter i').style.width = (info.length ? n / info.length * 100 : 0) + '%';
+    $$('.dots i').forEach(function (dot, k) { dot.classList.toggle('on', read.has(info[k].id)); });
     var nf = info.filter(function (it) { return fav.has(it.id); }).length;
-    $('.nfav').textContent = nf ? '★ ' + nf : '';
+    $('.nfav').textContent = nf ? '즐겨찾기 ' + nf : '';
     $$('.filters button').forEach(function (b) { b.setAttribute('aria-selected', String(b.dataset.f === filter)); });
     $('.chips').hidden = filter !== 'all';
-    var last = load(APP + ':last', null), res = $('.resume');
-    if (last && byId[last] && !read.has(last)) {
-      res.hidden = false; res.href = '#' + last; $('b', res).textContent = byId[last].title;
-    } else res.hidden = true;
+    paintToday();
+  }
+
+  // ── 오늘의 한 장: 순서대로 읽으니 마지막으로 연 장(:last)을 기준으로 고른다 ──
+  // 그 장을 다 읽었으면 그다음 안 읽은 장, 읽다 말았으면 그 장, 기록이 없으면 첫 안 읽은 장
+  var pickId = null, pickNote = '';
+  function after(i) {
+    for (var k = 1; k <= info.length; k++) { var it = info[(i + k) % info.length]; if (!read.has(it.id)) return it; }
+    return info[(i + 1) % info.length];
+  }
+  function baseDeal() {
+    var last = load(APP + ':last', null), i = last && byId[last] ? info.indexOf(byId[last]) : -1;
+    if (i < 0) return { it: after(-1), note: read.size ? '아직 안 읽은 장부터' : '처음부터 차례대로' };
+    if (!read.has(last)) return { it: info[i], note: '읽다 만 장이에요' };
+    return { it: after(i), note: '직전에 읽은 장: ' + info[i].title };
+  }
+  function paintToday(turn) {
+    var dl = pickId ? { it: byId[pickId], note: pickNote } : baseDeal(), it = dl.it;
+    $('.today').innerHTML = '<div class="deal' + (turn ? ' turn' : '') + '" data-gi="' + it.gi + '">' +
+      '<div class="dm"><span>' + esc(it.group) + (it.topic ? ' · ' + esc(it.topic) : '') + '</span><span>' + it.mins + '분</span></div>' +
+      '<h2 class="q">' + esc(it.title) + '</h2><div><p class="note">' + esc(dl.note) + '</p>' +
+      '<div class="row2"><a class="go" href="#' + it.id + '">이 장 읽기<span aria-hidden="true">→</span></a>' +
+      '<button class="flip" type="button" data-id="' + it.id + '">넘기기</button></div></div></div>';
   }
 
   function syncCard(c) {
     var f = $('.fav', c), on = fav.has(c.id);
-    f.textContent = on ? '★' : '☆'; f.setAttribute('aria-pressed', String(on));
+    f.setAttribute('aria-pressed', String(on));
     var b = $('.done-btn', c), r = read.has(c.id);
     b.setAttribute('aria-pressed', String(r));
     $('.lb', b).textContent = r ? '읽었어요 (누르면 취소)' : '다 읽었어요';
@@ -2268,7 +2302,7 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
     var h = decodeURIComponent(location.hash.slice(1)), it = byId[h], c = it && it.el;
     if (cur && cur !== c) cur.classList.remove('cur');
     if (c) {
-      cur = c; c.classList.add('cur'); root.dataset.view = 'card';
+      cur = c; c.classList.add('cur'); root.dataset.view = 'card'; pickId = null;
       save(APP + ':last', h); syncCard(c); window.scrollTo(0, 0); watchEnd(c); progress();
       return;
     }
@@ -2296,16 +2330,15 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
 
   // ── 3. 읽기 설정 ──
   var sheet = $('#sheet');
+  // 화면은 늘 어둡게가 기본. 예전에 저장된 '자동'도 어둡게로 본다
+  function themeOf(t) { return t === 'light' ? 'light' : 'dark'; }
   function applyTheme(t) {
-    if (t === 'auto') delete root.dataset.theme; else root.dataset.theme = t;
+    if (themeOf(t) === 'light') root.dataset.theme = 'light'; else delete root.dataset.theme;
     var bg = getComputedStyle(root).getPropertyValue('--bg').trim();
-    $$('meta[name="theme-color"]').forEach(function (m) {
-      if (t === 'auto') m.content = m.dataset.orig || m.content;
-      else { m.dataset.orig = m.dataset.orig || m.content; m.content = bg; }
-    });
+    $$('meta[name="theme-color"]').forEach(function (m) { m.content = bg; });
   }
   function syncSheet() {
-    var fs = String(load('culture:fs', 1)), th = load('culture:theme', 'auto');
+    var fs = String(load('culture:fs', 1)), th = themeOf(load('culture:theme', 'dark'));
     $$('.seg[data-k="fs"] button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === fs)); });
     $$('.seg[data-k="theme"] button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === th)); });
   }
@@ -2320,8 +2353,13 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
     else if (t.classList.contains('fav') && cur) {
       var on = !fav.has(cur.id);
       if (on) fav.add(cur.id); else fav.delete(cur.id);
-      persist(); syncCard(cur); toast(on ? '즐겨찾기에 담았어요 ★' : '즐겨찾기에서 뺐어요');
+      persist(); syncCard(cur); toast(on ? '즐겨찾기에 담았어요' : '즐겨찾기에서 뺐어요');
     } else if (t.classList.contains('done-btn') && cur) setRead(cur.id, !read.has(cur.id));
+    else if (t.classList.contains('flip')) {
+      // 넘기기: 차례대로 한 장 앞으로 (순서대로 읽으니 무작위로 뽑지 않는다)
+      var from = byId[t.dataset.id]; pickId = after(info.indexOf(from)).id; pickNote = '앞 장: ' + from.title;
+      paintToday(true); $('.flip').focus({ preventScroll: true });
+    }
     else if (t.dataset.f) { filter = t.dataset.f; save(APP + ':filter', filter); paint(); }
     else if (t.parentNode.dataset.k === 'fs') { root.dataset.fs = t.dataset.v; save('culture:fs', +t.dataset.v); syncSheet(); progress(); }
     else if (t.parentNode.dataset.k === 'theme') { applyTheme(t.dataset.v); save('culture:theme', t.dataset.v); syncSheet(); }
@@ -2343,7 +2381,7 @@ html:not(.js) .card::before{content:attr(data-emoji) "  " attr(data-group) " · 
     if (a && a.href) location.hash = a.getAttribute('href');
   });
 
-  applyTheme(load('culture:theme', 'auto'));
+  applyTheme(load('culture:theme', 'dark'));
   window.addEventListener('hashchange', route);
   route();
 })();

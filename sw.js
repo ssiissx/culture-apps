@@ -1,9 +1,9 @@
 // 오프라인 지원: 처음 열 때 교양 앱 전체(첫 화면·세 앱·아이콘)를 폰에 저장해 두고, 이후엔 저장본을 먼저 쓴다.
 // 버전과 저장할 파일 목록은 site.py가 채운다. 내용이 바뀌면 버전이 바뀌고 새 저장본으로 통째로 바꾼다.
 // 같은 주소(ssiissx.github.io)의 다른 앱 저장본을 건드리지 않도록 이름은 'ca-'로 시작한다.
-const VERSION = "693a9eaa8e";
+const VERSION = "f779279b4c";
 const CACHE = 'ca-' + VERSION;
-const PRECACHE = ["./", "./index.html", "./sangsik.html", "./japan.html", "./korea.html", "./sangsik.webmanifest", "./japan.webmanifest", "./korea.webmanifest", "./manifest.webmanifest", "./icons/hub-apple-touch-icon.png", "./icons/hub-favicon.png", "./icons/hub-icon-192.png", "./icons/hub-icon-512.png", "./icons/hub-maskable-512.png", "./icons/japan-apple-touch-icon.png", "./icons/japan-favicon.png", "./icons/japan-icon-192.png", "./icons/japan-icon-512.png", "./icons/japan-maskable-512.png", "./icons/korea-apple-touch-icon.png", "./icons/korea-favicon.png", "./icons/korea-icon-192.png", "./icons/korea-icon-512.png", "./icons/korea-maskable-512.png", "./icons/sangsik-apple-touch-icon.png", "./icons/sangsik-favicon.png", "./icons/sangsik-icon-192.png", "./icons/sangsik-icon-512.png", "./icons/sangsik-maskable-512.png"];
+const PRECACHE = ["./", "./index.html", "./sangsik.html", "./japan.html", "./korea.html", "./sangsik.webmanifest", "./japan.webmanifest", "./korea.webmanifest", "./manifest.webmanifest", "./icons/hub-apple-touch-icon.png", "./icons/hub-favicon.png", "./icons/hub-icon-192.png", "./icons/hub-icon-512.png", "./icons/hub-maskable-512.png", "./icons/japan-apple-touch-icon.png", "./icons/japan-favicon.png", "./icons/japan-icon-192.png", "./icons/japan-icon-512.png", "./icons/japan-maskable-512.png", "./icons/korea-apple-touch-icon.png", "./icons/korea-favicon.png", "./icons/korea-icon-192.png", "./icons/korea-icon-512.png", "./icons/korea-maskable-512.png", "./icons/sangsik-apple-touch-icon.png", "./icons/sangsik-favicon.png", "./icons/sangsik-icon-192.png", "./icons/sangsik-icon-512.png", "./icons/sangsik-maskable-512.png", "./fonts/fonts.css", "./fonts/Hahmlet-0-c9f5aa.woff2", "./fonts/Hahmlet-1-ee0d6f.woff2", "./fonts/Hahmlet-2-e868f3.woff2"];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
@@ -30,7 +30,10 @@ self.addEventListener('fetch', event => {
     const hit = await cache.match(req, { ignoreSearch: true });
     if (hit) return hit;
     try {
-      return await fetch(req);
+      const res = await fetch(req);
+      // 제목 글꼴은 받는 대로 저장해 둔다: 저장 목록이 다시 만들어지다 빠져도 오프라인에서 제목 글꼴이 보이게
+      if (res.ok && new URL(req.url).pathname.includes('/fonts/')) cache.put(req, res.clone());
+      return res;
     } catch (e) {
       if (req.mode === 'navigate') {
         const shell = await cache.match('./');

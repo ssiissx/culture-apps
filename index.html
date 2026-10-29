@@ -3,40 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#161517" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#1e1d1b">
 <title>교양 앱</title>
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="fonts/fonts.css">
 <link rel="icon" type="image/png" href="icons/hub-favicon.png">
 <link rel="apple-touch-icon" href="icons/hub-apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="교양 앱">
+<script>try{if(JSON.parse(localStorage.getItem('culture:theme')||'"dark"')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 <style>
-/* 세 앱으로 가는 첫 화면: 앱마다 자기 색의 표식을 단 세로 목록 */
-:root{--bg:#f6f3ec;--surface:#fffdf8;--ink:#28262a;--mute:#67636a;--line:#e5e0d6;--a0:#ad4824;--a1:#b23a26;--a2:#16705f;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161517;--surface:#201f22;--ink:#ebe8ee;--mute:#a29ea6;--line:#343238;--a0:#f28d63;--a1:#f27c60;--a2:#5cc4ad;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#161517;--surface:#201f22;--ink:#ebe8ee;--mute:#a29ea6;--line:#343238;--a0:#f28d63;--a1:#f27c60;--a2:#5cc4ad;color-scheme:dark}
+/* 세 앱으로 가는 첫 화면: 앱마다 자기 파스텔 색의 카드 한 장. 바탕은 앱과 같이 늘 어둡게(읽기 설정에서 '밝게'를 고르면 밝게) */
+:root{--bg:#1e1d1b;--ink:#ebeae6;--ink2:#cfccc5;--mute:#a5a39e;--card-ink:#2a2723;--display:"Hahmlet",-apple-system,"Apple SD Gothic Neo",sans-serif;color-scheme:dark}
+:root[data-theme="light"]{--bg:#f1f0ed;--ink:#24231f;--ink2:#44423d;--mute:#67645e;color-scheme:light}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 main{max-width:620px;margin:0 auto;padding-block:calc(40px + env(safe-area-inset-top,0px)) calc(48px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1{margin:0;font-size:28px;letter-spacing:-.6px;text-wrap:balance}
-.lead{margin:6px 0 26px;color:var(--mute);font-size:15px;line-height:1.6}
+h1{margin:0;font-family:var(--display);font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-.045em}
+.lead{margin:10px 0 28px;color:var(--ink2);font-size:18px;line-height:1.55}
 .apps{display:grid;gap:12px}
-.app{display:flex;align-items:center;gap:16px;padding:18px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);color:inherit;text-decoration:none}
-.app:focus-visible{outline:2px solid var(--a);outline-offset:2px}
-.app:active{transform:scale(.99)}
-.mark{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--a);color:var(--surface);font-size:21px;font-weight:800}
-.m-waves{border-radius:9px;font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-size:25px}
-.m-obang{border-radius:50%}
-.txt{flex:1;min-width:0;display:grid;gap:3px}
-.txt b{font-size:18px;letter-spacing:-.3px}
-.txt span{font-size:14px;line-height:1.5;color:var(--mute)}
-.txt i{font-style:normal;font-size:13px;font-weight:700;color:var(--a)}
-.go{flex:none;font-size:26px;color:var(--mute)}
-.foot{margin:28px 0 0;font-size:13px;line-height:1.7;color:var(--mute)}
+.app{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:190px;padding:22px 22px 20px;border-radius:22px;background:var(--a);color:var(--card-ink);text-decoration:none}
+.app:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.app:active{transform:scale(.985)}
+.app h2{margin:0;font-family:var(--display);font-size:30px;font-weight:800;line-height:1.15;letter-spacing:-.04em}
+.app p{margin:8px 0 0;font-size:16px;line-height:1.5;opacity:.8}
+.app .row{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700}
+.app .row span:last-child{font-size:22px;line-height:1}
+.foot{margin:30px 0 0;font-size:15px;line-height:1.65;color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.app{animation:rise .55s cubic-bezier(.2,.7,.2,1) both}.app:nth-child(2){animation-delay:70ms}.app:nth-child(3){animation-delay:140ms}@keyframes rise{from{opacity:0;transform:translateY(18px)}}}
 </style>
 </head>
 <body>
@@ -44,12 +41,18 @@ h1{margin:0;font-size:28px;letter-spacing:-.6px;text-wrap:balance}
 <h1>교양 앱</h1>
 <p class="lead">10분이면 한 장, 알고 나면 달리 보이는 이야기들.</p>
 <nav class="apps">
-<a class="app" href="sangsik.html" style="--a:var(--a0)"><span class="mark m-dots">10</span><span class="txt"><b>10분 상식</b><span>궁금한 질문 하나, 이야기 한 편</span><i>53장</i></span><span class="go">›</span></a>
-<a class="app" href="japan.html" style="--a:var(--a1)"><span class="mark m-waves">日</span><span class="txt"><b>알고 가면 보이는 일본</b><span>역사와 사건, IP, 요즘 문화, 그리고 그늘까지</span><i>53장</i></span><span class="go">›</span></a>
-<a class="app" href="korea.html" style="--a:var(--a2)"><span class="mark m-obang">한</span><span class="txt"><b>알고 보면 새로운 한국</b><span>한국인도 몰랐던 역사와 사건, K-콘텐츠, 요즘 문화, 그리고 그늘까지</span><i>53장</i></span><span class="go">›</span></a>
+<a class="app" href="sangsik.html" style="--a:#efbfa9" data-app="sangsik"><div><h2>10분 상식</h2><p>궁금한 질문 하나, 이야기 한 편</p></div><div class="row"><span class="n">53장</span><span aria-hidden="true">→</span></div></a>
+<a class="app" href="japan.html" style="--a:#f0c2c2" data-app="japan"><div><h2>알고 가면 보이는 일본</h2><p>역사와 사건, IP, 요즘 문화, 그리고 그늘까지</p></div><div class="row"><span class="n">53장</span><span aria-hidden="true">→</span></div></a>
+<a class="app" href="korea.html" style="--a:#c3d4ec" data-app="korea"><div><h2>알고 보면 새로운 한국</h2><p>한국인도 몰랐던 역사와 사건, K-콘텐츠, 요즘 문화, 그리고 그늘까지</p></div><div class="row"><span class="n">53장</span><span aria-hidden="true">→</span></div></a>
 </nav>
 <p class="foot">사파리에서 공유 버튼 → '홈 화면에 추가'를 누르면 앱처럼 쓸 수 있고, 한 번 연 뒤에는 인터넷 없이도 열려요. 앱마다 따로 추가해도 돼요. 읽은 기록과 즐겨찾기는 이 기기에만 저장돼요.</p>
 </main>
+<script>
+// 앱마다 읽은 장 수를 보여 준다 (각 앱이 저장한 '<앱>:read'를 읽기만 한다)
+document.querySelectorAll('.app').forEach(function (a) {
+  try { var n = (JSON.parse(localStorage.getItem(a.dataset.app + ':read') || '[]')).length; if (n) a.querySelector('.n').textContent = n + ' / 53장 읽음'; } catch (e) {}
+});
+</script>
 <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})</script>
 </body>
 </html>
